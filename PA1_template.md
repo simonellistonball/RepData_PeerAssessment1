@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 First we need to load some libraries, and set some global options.
 
 ```r
@@ -35,7 +40,7 @@ ggplot(d, aes(x=date, y=steps)) + geom_histogram(stat="identity") +
 ## Warning: Removed 2304 rows containing missing values (position_stack).
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 Mean and median total steps per day, ignoring missing values
 
@@ -71,7 +76,7 @@ p <- p + geom_text(data = d_per_interval[d_per_interval$interval == max_steps_in
 print(p)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 The interval with the greatest average number of steps is: **835**
 
@@ -106,7 +111,7 @@ ggplot(d_filled, aes(x=date, y=steps)) + geom_histogram(stat="identity")+
   ggtitle('Total Steps by Day with imputed missing values')
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 Mean and median total steps per day, ignoring missing values
 
@@ -142,6 +147,6 @@ ggplot(d_filled_per_interval, aes(x=interval)) +
   facet_grid(weekend ~ .)   
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 It would seem that there are overall fewer steps at the weekends during most intervals, and that the steps during earlier intervals in the day are considerably lower at weekends. Weekend steps also seem more evenly distributed over the length of the day.
